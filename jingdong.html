@@ -53,30 +53,30 @@
         #wrap .banner div:nth-child(5){
             background-image: url("img/bd4cbf9c5467228a.jpg!q90!cc_590x470.webp");
         }
-        @keyframes in {
-            from{
-                left: 590px;
-            }
-            to{
-                left: 0px;
-            }
-        }
-        @keyframes out {
-            from{
-                left: 0px;
-            }
-            to{
-                left: -590px;
-            }
-        }
+        /*@keyframes in {*/
+            /*from{*/
+                /*left: 590px;*/
+            /*}*/
+            /*to{*/
+                /*left: 0px;*/
+            /*}*/
+        /*}*/
+        /*@keyframes out {*/
+            /*from{*/
+                /*left: 0px;*/
+            /*}*/
+            /*to{*/
+                /*left: -590px;*/
+            /*}*/
+        /*}*/
         #wrap .banner .a{
             animation: in 1s;
             left: 0px;
         }
-        #wrap .banner .b{
+        /*#wrap .banner .b{
             animation: out 1s;
             left: 590px;
-        }
+        }*/
         #wrap .banner ul{
             list-style: none;
             position: absolute;
@@ -224,13 +224,13 @@
             background-size: 190px 200px;
             background-repeat: no-repeat;
         }
-        .d .b4 .a{
+        .d .b4 .a:nth-child(1){
             background-image: url('img/0aea9971ffc9b9ac.jpg!q90!cc_130x130.webp');
         }
-        .d .b4 .b{
+        .d .b4 .a:nth-child(2){
             background-image: url('img/5ce4c767N8bc83516.jpg!q90!cc_130x130');
         }
-        @keyframes in1 {
+        /*@keyframes in1 {
             from{
                 left: 190px;
             }
@@ -245,15 +245,15 @@
             to{
                 left: -190px;
             }
-        }
+        }*/
         .wrap1 .d .b4 .a{
             animation: in1 1s;
             left: 0px;
         }
-        .wrap1 .d .b4 .b{
+        /*.wrap1 .d .b4 .b{
             animation: out2 1s;
             left: 190px;
-        }
+        }*/
     </style>
 
 
@@ -321,10 +321,14 @@
         </div>
         <div class="banner">
             <div class="a"></div>
-            <div class="b"></div>
-            <div class="b"></div>
-            <div class="b"></div>
-            <div class="b"></div>
+            <div class="a"></div>
+            <div class="a"></div>
+            <div class="a"></div>
+            <div class="a"></div>
+            <!--<div class="b"></div>-->
+            <!--<div class="b"></div>-->
+            <!--<div class="b"></div>-->
+            <!--<div class="b"></div>-->
             <ul>
                 <li></li>
                 <li></li>
@@ -369,7 +373,8 @@
         <div class="d">
             <div class="b4">
                 <div class="a"></div>
-                <div class="b"></div>
+                <div class="a"></div>
+                <!--<div class="b"></div>-->
             </div>
             <ul>
                 <li></li>
@@ -384,21 +389,56 @@
          * 获取同级元素的方式 sibling()
          */
 
-            $(function () {
-                $("#wrap .banner ul li").click(function () {
-                    //获取当前元素的数组下标
-                    var index = $(this).index()
-                    $("#wrap .banner div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
+        $(function () {
+            /*$("#wrap .banner ul li").click(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index()
+                $("#wrap .banner div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
 
-                })
-                $(".wrap1 .d ul li").click(function () {
-                    //获取当前元素的数组下标
-                    var index = $(this).index()
-                    $(".wrap1 .d .b4 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
-
-                })
             })
+            $(".wrap1 .d ul li").click(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index()
+                console.log($(".wrap1 .d .b4 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a"))
 
+
+            })*/
+
+            $("#wrap .banner ul li").mousemove(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index();
+                $("#wrap .banner .a").eq(index).fadeIn(2000).siblings(".a").fadeOut(2000);
+            });
+            var i=0;
+            var a;
+            //定时器自动播放的效果
+            //应用场景 轮播图
+            a = setInterval(function () {
+                i++;
+                if (i>5){
+                    i=0;
+                }
+                $("#wrap .banner .a").eq(i).fadeIn(2000).siblings("div").fadeOut(2000);
+            },2000)
+
+
+            $(".wrap1 .d ul li").mousemove(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index();
+                $(".wrap1 .d .b4 .a").eq(index).fadeIn(1000).siblings(".a").fadeOut(1000);
+            });
+            var c=0;
+            var b;
+            //定时器自动播放的效果
+            //应用场景 轮播图
+            b = setInterval(function () {
+                c++;
+                if (c>2){
+                    c=0;
+                }
+                $(".wrap1 .d .b4 .a").eq(c).fadeIn(1500).siblings(".a").fadeOut(1500);
+            },1500)
+        });
     </script>
 </body>
 </html>
