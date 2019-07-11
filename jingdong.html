@@ -118,14 +118,15 @@
 
 
         .wrap1{
-            width: 1155px;
+            width: 1195px;
             height: 275px;
+            margin: auto;
             border: solid 1px #000;
             margin-top: 30px;
             margin-left: 60px;
         }
         .a1{
-            width: 190px;
+            width: 198px;
             height: 275px;
             float: left;
             border-right: solid 2px #dbdbdb;
@@ -209,7 +210,7 @@
         }
         .wrap1 .d{
             position: relative;
-            width: 190px;
+            width: 192px;
             height: 275px;
             border-right: solid 2px #dbdbdb;
             float: left;
@@ -382,21 +383,21 @@
         /**
          * 获取同级元素的方式 sibling()
          */
-        $(function () {
-            $("#wrap .banner ul li").click(function () {
-                //获取当前元素的数组下标
-                var index = $(this).index()
-                $("#wrap .banner div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
 
+            $(function () {
+                $("#wrap .banner ul li").click(function () {
+                    //获取当前元素的数组下标
+                    var index = $(this).index()
+                    $("#wrap .banner div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
+
+                })
+                $(".wrap1 .d ul li").click(function () {
+                    //获取当前元素的数组下标
+                    var index = $(this).index()
+                    $(".wrap1 .d .b4 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
+
+                })
             })
-            $(".wrap1 .d ul li").click(function () {
-                //获取当前元素的数组下标
-                var index = $(this).index()
-                $(".wrap1 .d .b4 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
-
-            })
-        });
-
 
     </script>
 </body>
