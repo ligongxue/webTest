@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        #wrap{
+            width: 1190px;
+            height: 470px;
+            margin: auto;
+            background-color: #dbdbdb;
+            display: flex;
+            justify-content: space-between;
+        }
+        #wrap .content{
+            width: 190px;
+            height: 470px;
+            background-color: white;
+        }
+
+        #wrap .banner{
+            width: 590px;
+            height: 470px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #wrap .banner div{
+            width: 590px;
+            height: 470px;
+            position: absolute;
+            left: 590px;
+            top: 0;
+        }
+        #wrap .banner div:nth-child(1){
+            background-image: url("img/02c2e3b1514d4c10.jpg!q90!cc_590x470.webp");
+        }
+        #wrap .banner div:nth-child(2){
+            background-image: url("img/8e8f326f464a044c.jpg!q90!cc_590x470.webp");
+        }
+        #wrap .banner div:nth-child(3){
+            background-image: url("img/70d5fa3c.jpg");
+        }
+        #wrap .banner div:nth-child(4){
+            background-image: url("img/a10db22aa6a2b3b2.jpg!q90!cc_590x470.webp");
+        }
+        #wrap .banner div:nth-child(5){
+            background-image: url("img/bd4cbf9c5467228a.jpg!q90!cc_590x470.webp");
+        }
+        @keyframes in {
+            from{
+                left: 590px;
+            }
+            to{
+                left: 0px;
+            }
+        }
+        @keyframes out {
+            from{
+                left: 0px;
+            }
+            to{
+                left: -590px;
+            }
+        }
+        #wrap .banner .a{
+            animation: in 1s;
+            left: 0px;
+        }
+        #wrap .banner .b{
+            animation: out 1s;
+            left: 590px;
+        }
+        #wrap .banner ul{
+            list-style: none;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
+        #wrap .banner ul li{
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        #wrap .imgs{
+            width: 190px;
+            height: 470px;
+            background-color: white;
+        }
+        #wrap .desc{
+            width: 190px;
+            height: 470px;
+            background-color: white;
+        }
+        .content ul{
+            list-style: none;
+            width: 190px;
+        }
+        li{
+            margin-left: 5px;
+            color: #444444;
+            padding-top: 4px;
+
+        }
+        #wrap .content ul li:nth-child(even) .a{
+            background-color: blueviolet;
+        }
+
+
+        .wrap1{
+            width: 1155px;
+            height: 275px;
+            border: solid 1px #000;
+            margin-top: 30px;
+            margin-left: 60px;
+        }
+        .a1{
+            width: 190px;
+            height: 275px;
+            float: left;
+            border-right: solid 2px #dbdbdb;
+        }
+        .a1:nth-child(1){
+            background-color: red;
+        }
+        .b4{
+            height: 190px;
+            width: 190px;
+            background-size: 140px 140px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .a1:nth-child(2) .b4{
+            background-image: url('img/5befbbadNd1d349c9.png');
+        }
+        .a1:nth-child(3) .b4{
+            background-image: url('img/c66369676394b545.jpg');
+        }
+        .a1:nth-child(4) .b4{
+            background-image: url('img/5cda6525N5f15cce4.jpg');
+        }
+        .a1:nth-child(5) .b4{
+            background-image: url('img/fd13338bd767b72f.jpg');
+        }
+        .b1{
+            color: white;
+            font-size: 35px;
+            margin-left: 25px;
+            margin-top: 40px;
+        }
+        .b2{
+            color: #666;
+            font-size: 20px;
+            margin-left: 28px;
+            margin-top: 5px;
+        }
+
+        .b3{
+            color: #000;
+            height:30px ;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: center;
+            line-height: 30px;
+        }
+        .a2{
+            width: 80px;
+            height: 30px;
+            border: solid 1px #ff0000;
+            float:right;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .a2:nth-child(even){
+            background-color: #ff0000;
+
+            color: #ffffff;
+            font-weight: 800;
+        }
+        .a2:nth-child(odd){/*odd是奇数even时偶数*/
+            color: grey;
+            margin-right: 12px;
+        }
+        .wrap1 .d ul{
+            list-style: none;
+            position: absolute;
+            bottom: 15px;
+            right: 80px;
+        }
+        .wrap1 .d ul li{
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .wrap1 .d{
+            position: relative;
+            width: 190px;
+            height: 275px;
+            border-right: solid 2px #dbdbdb;
+            float: left;
+            overflow: hidden;
+        }
+        .wrap1 .d .b4 div{
+            height: 190px;
+            width: 190px;
+            position: absolute;
+            margin-top: 10px;
+            background-size: 190px 200px;
+            background-repeat: no-repeat;
+        }
+        .d .b4 .a{
+            background-image: url('img/0aea9971ffc9b9ac.jpg!q90!cc_130x130.webp');
+        }
+        .d .b4 .b{
+            background-image: url('img/5ce4c767N8bc83516.jpg!q90!cc_130x130');
+        }
+        @keyframes in1 {
+            from{
+                left: 190px;
+            }
+            to{
+                left: 0px;
+            }
+        }
+        @keyframes out2 {
+            from{
+                left: 0px;
+            }
+            to{
+                left: -190px;
+            }
+        }
+        .wrap1 .d .b4 .a{
+            animation: in1 1s;
+            left: 0px;
+        }
+        .wrap1 .d .b4 .b{
+            animation: out2 1s;
+            left: 190px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="content">
+            <ul >
+                <li>家用电器
+                    <div class="a"></div>
+                </li>
+                <li>手机/运营商/数码
+                    <div class="a"></div>
+                </li>
+                <li>电脑/办公
+                    <div class="a"></div>
+                </li>
+                <li>家居/家具/家装/厨具
+                    <div class="a"></div>
+                </li>
+                <li>男装/女装/童装/内衣
+                    <div class="a"></div>
+                </li>
+                <li>美妆/各护清洁/宠物
+                    <div class="a"></div>
+                </li>
+                <li>女鞋/箱包/钟表/珠宝
+                    <div class="a"></div>
+                </li>
+                <li>男鞋/运动/户外
+                    <div class="a"></div>
+                </li>
+                <li>房产/汽车/汽车用品
+                    <div class="a"></div>
+                </li>
+                <li>母婴/玩具乐器
+                    <div class="a"></div>
+                </li>
+                <li>食品/酒类/生鲜
+                    <div class="a"></div>
+                </li>
+                <li>艺术/礼品鲜花/农资绿植
+                    <div class="a"></div>
+                </li>
+                <li>医药保健/计生情趣
+                    <div class="a"></div>
+                </li>
+                <li>图书/文娱/电子书
+                    <div class="a"></div>
+                </li>
+                <li>机票/酒店/旅游/生活
+                    <div class="a"></div>
+                </li>
+                <li>理财/众筹/白条/保险
+                    <div class="a"></div>
+                </li>
+                <li>安装/维修/清洗/二手
+                    <div class="a"></div>
+                </li>
+                <li>工业品
+                    <div class="a"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="banner">
+            <div class="a"></div>
+            <div class="b"></div>
+            <div class="b"></div>
+            <div class="b"></div>
+            <div class="b"></div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="imgs"></div>
+        <div class="desc"></div>
+    </div>
+    <div class="wrap1">
+        <div class="a1">
+            <div class="b1">京东秒杀</div>
+            <div class="b2">FLASH DEALS</div>
+        </div>
+        <div class="a1">
+            <div class="b4"></div>
+            <div class="b3">gvcgcdvcdjcbhjvcjdsdscdjchjdvsfdbhjh</div>
+            <div class="a2">58.00</div>
+            <div class="a2">99.00</div>
+
+        </div>
+        <div class="a1">
+            <div class="b4"></div>
+            <div class="b3">gvcgcdvcdjcbhjvcjdsdscdjchjdvsfdbhjh</div>
+            <div class="a2">58.00</div>
+            <div class="a2">99.00</div>
+        </div>
+        <div class="a1">
+            <div class="b4"></div>
+            <div class="b3">gvcgcdvcdjcbhjvcjdsdscdjchjdvsfdbhjh</div>
+            <div class="a2">58.00</div>
+            <div class="a2">99.00</div>
+        </div>
+        <div class="a1">
+            <div class="b4"></div>
+            <div class="b3">gvcgcdvcdjcbhjvcjdsdscdjchjdvsfdbhjh</div>
+            <div class="a2">58.00</div>
+            <div class="a2">99.00</div>
+        </div>
+        <div class="d">
+            <div class="b4">
+                <div class="a"></div>
+                <div class="b"></div>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /**
+         * 获取同级元素的方式 sibling()
+         */
+        $(function () {
+            $("#wrap .banner ul li").click(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index()
+                $("#wrap .banner div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
+
+            })
+            $(".wrap1 .d ul li").click(function () {
+                //获取当前元素的数组下标
+                var index = $(this).index()
+                $(".wrap1 .d .b4 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a")
+
+            })
+        });
+
+
+    </script>
+</body>
+</html>
